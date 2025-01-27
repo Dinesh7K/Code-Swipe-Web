@@ -11,3 +11,17 @@ Currently, two official plugins are available:
 Create React using VITE (VITE+REACT)
 Install tailwind-3.14.7 and init it,
 Install DesiUi
+
+Add NavBar
+Use react Router
+
+Routing is more important
+
+Component level design
+
+Body
+    NavBar
+    Route=/ =>Feed
+    Route=/login =>Login
+    Route=/connection =>Connection
+    Route=/profile =>Profile
