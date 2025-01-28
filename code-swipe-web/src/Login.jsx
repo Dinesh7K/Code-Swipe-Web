@@ -1,8 +1,24 @@
 import React, { useState } from "react";
-
+import axios from "axios"
 const Login = () => {
-  const [emailId, setEmailId] = useState("");
+  const [email, setEmailId] = useState("");
   const [password, setPassword] = useState("");
+  const handleLogin=async()=>{
+    try{
+      const res=await axios.post("http://localhost:3000/login",
+        {
+        email,
+        password
+        },
+      {
+        withCredentials:true
+      })
+    
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
   return (
     <div className="flex justify-center my-40">
       <div className="card bg-base-100 w-96 shadow-xl">
@@ -15,7 +31,7 @@ const Login = () => {
               </div>
               <input
                 type="text"
-                value={emailId}
+                value={email}
                 placeholder="Type here"
                 className="input input-bordered w-full max-w-xs"
                 onChange={(e)=>setEmailId(e.target.value)}
@@ -38,7 +54,7 @@ const Login = () => {
             </label>
           </div>
           <div className="card-actions justify-center">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
           </div>
         </div>
       </div>
